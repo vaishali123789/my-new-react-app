@@ -16,8 +16,8 @@ const Navbar = () => {
 
         <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top p-3 shadow">
             <div class="container">
-                <span class="navbar-brand order-1 fs-1 logo" href="#">
-                    <img src="D:\React\react_first_app\react_first_app\src\assets\logo-Curigen (1).webp" alt="" />
+                <span class="navbar-brand order-1 fs-1 logo" href="../Home">
+                    <img src="../src/assets/logo-Curigen (1).webp" alt="" />
                 </span>
                 <div class="order-5 d-flex justify-content-center align-content-center">
                     <div class="me-4 mt-1 order-2 order-lg-3 d-lg-none ">
@@ -33,20 +33,15 @@ const Navbar = () => {
                     <ul class="navbar-nav ms-auto gap-2 nav-ul">
 
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="#">Company Profile</a>
+                            <a class="nav-link active" href="../Product">Product</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">Product</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Services</a>
+                            <a class="nav-link" href="../Services">Services</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Gallary</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Blog</a>
-                        </li>
+
 
                         <div class="dropdown nav-item">
                             <a class="btn drop-btn nav-link nav-dropdown dropdown-toggle rounded-0" type="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="false">
@@ -111,7 +106,7 @@ const Navbar = () => {
 
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
+                            <a class="nav-link" href="../Contact">Contact</a>
                         </li>
                     </ul>
                     <div class="ms-3 order-2 order-lg-3 ">
