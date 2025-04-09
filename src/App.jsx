@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // import Userclassbase from './UserClassbase';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./component/Navbar";
+import ToDo from './component/Todo';
 import Home from "./pages/Home";
 import "./styles.css";
 import Contact from "./pages/Contact";
@@ -15,6 +16,7 @@ function App() {
       <Navbar />
       <Home/>
       <Contact/>
+      <ToDo/>
   
       <Routes>
         <Route path="/"/>
