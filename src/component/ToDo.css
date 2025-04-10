@@ -36,9 +36,9 @@ input{
   outline :none;
 
 }
-button{
-  min-height: 40px;
-  width:40px;
+.btn_todo{
+  min-height: 50px;
+  width:80px;
   border-radius:50% 50%;
   border-color: transparent;
   background-color: #8566aa;
@@ -50,6 +50,31 @@ button{
   box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
 
 }
-button:hover{
+.btn_todo:hover{
   background-color: aquamarine;
+  
+}
+.btn_todo {
+  margin-left: 10px;
+  padding: 5px 10px;
+  font-size: 18px;
+}
+
+.btn_delete, .btn_edit {
+  margin-left: 10px;
+  padding: 2px 6px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn_delete {
+  background-color: red;
+  color: white;
+}
+
+.btn_edit {
+  background-color: #007bff;
+  color: white;
 }

@@ -2,18 +2,40 @@ import React, { useState } from "react";
 import './ToDo.css';
 
 const ToDo = () => {
-  const [InputList, setInputList] = useState("");
+  const [inputList, setInputList] = useState("");
   const [items, setItems] = useState([]);
+  const [isEditMode, setIsEditMode] = useState(false);
+  const [editIndex, setEditIndex] = useState(null);
 
   const itemEvent = (event) => {
     setInputList(event.target.value);
   };
 
   const Listofitems = () => {
-    if (InputList.trim() !== "") {
-      setItems((oldItems) => [...oldItems, InputList]);
-      setInputList(""); // Clear input after adding
+    if (inputList.trim() === "") return;
+
+    if (isEditMode) {
+      const updatedItems = items.map((item, index) =>
+        index === editIndex ? inputList : item
+      );
+      setItems(updatedItems);
+      setIsEditMode(false);
+      setEditIndex(null);
+    } else {
+      setItems([...items, inputList]);
     }
+
+    setInputList(""); // Clear input after action
+  };
+
+  const deleteItems = (id) => {
+    setItems((oldItems) => oldItems.filter((item, index) => index !== id));
+  };
+
+  const editItem = (index) => {
+    setInputList(items[index]);
+    setIsEditMode(true);
+    setEditIndex(index);
   };
 
   return (
@@ -25,15 +47,21 @@ const ToDo = () => {
           <br />
           <input
             type="text"
-            placeholder="Add an Item"
-            value={InputList}
+            placeholder="Add or Edit an Item"
+            value={inputList}
             onChange={itemEvent}
           />
-          <button onClick={Listofitems}>+</button>
+          <button className="btn_todo" onClick={Listofitems}>
+            {isEditMode ? "Update" : "Add"}
+          </button>
           <ol>
-            {items.map((itemVal, index) => {
-              return <li key={index}>{itemVal}</li>;
-            })}
+            {items.map((itemVal, index) => (
+              <li key={index}>
+                {itemVal}
+                <button className="btn_edit" onClick={() => editItem(index)}>✏️</button>
+                <button className="btn_delete" onClick={() => deleteItems(index)}>X</button>
+              </li>
+            ))}
           </ol>
         </div>
       </div>
